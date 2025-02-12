@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
-import todoApi from '@/api/todoApi'; // Шлях до вашого todoApi
+import todoApi from '@/api/todoApi';
 
 export const store = configureStore({
 	reducer: {
