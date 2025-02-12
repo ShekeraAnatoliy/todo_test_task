@@ -1,7 +1,4 @@
-import { useEffect, useState } from 'react';
 import TodoList from '../components/TodoList';
-import { TodoDto } from '@/types/todo';
-import AddTodo from '@/components/AddTodo';
 
 const Home = () => {
 	return (

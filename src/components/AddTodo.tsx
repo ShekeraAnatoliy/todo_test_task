@@ -1,10 +1,10 @@
-import { FC, useState } from 'react';
+import { useState } from 'react';
 
 interface AddTodoProps {
 	addTodo: (title: string) => void;
 }
 
-const AddTodo: FC<AddTodoProps> = ({ addTodo }) => {
+const AddTodo = ({ addTodo }: AddTodoProps) => {
 	const [title, setTitle] = useState('');
 
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -20,6 +20,7 @@ const AddTodo: FC<AddTodoProps> = ({ addTodo }) => {
 				type="text"
 				value={title}
 				onChange={(e) => setTitle(e.target.value)}
+				placeholder="Enter todo"
 				className="border border-gray-300 rounded-md px-4 py-1 mr-2"
 			/>
 			<button

@@ -1,13 +1,12 @@
-import { FC } from 'react';
 import { TodoDto } from '../types/todo';
 
-interface TodoProps {
+interface ITodoProps {
 	todo: TodoDto;
 	deleteTodo: (id: number) => void;
-	editTodo: (todo: TodoDto) => void;
+	updateTodo: (id: number, completed: boolean) => void;
 }
 
-const Todo: FC<TodoProps> = ({ todo, deleteTodo, editTodo }) => {
+const Todo = ({ todo, deleteTodo, updateTodo }: ITodoProps) => {
 	return (
 		<li className="flex justify-between gap-5 items-center">
 			<div className="flex gap-3 items-center">
@@ -17,9 +16,7 @@ const Todo: FC<TodoProps> = ({ todo, deleteTodo, editTodo }) => {
 							? 'p-3 border rounded-full bg-green-800'
 							: 'p-3 border rounded-full'
 					}
-					onClick={() =>
-						editTodo({ ...todo, completed: !todo.completed })
-					}
+					onClick={() => updateTodo(todo.id, todo.completed)}
 				/>
 				<span
 					className={
